@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input[type="text"]{
+  outline: none !important;
+}
+
+input[type="email"]{
+  outline: none !important;
+}
+input[type="search"]{
+  outline: none !important;
+}
+
+input[type="password"]{
+  outline: none !important;
+}
+
+.container {
+  display: grid;
+}
+
+.content, .overlay {
+  grid-area: 1 / 1;
+}
+/* .radialGradient{
+  background-image: url('https://images.pexels.com/photos/955393/pexels-photo-955393.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(#6157A0, #6157A0);
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}

@@ -116,7 +116,7 @@ export const LoginForm = () : JSX.Element => {
     return(
         <div className='w-full flex justify-center items-center'>
             <div className='w-4/5 my-8 p-4 md:p-8'>
-                <p className='text-4xl  font-bold py-6'>Welcome to your 
+                <p className='text-4xl text-black font-bold py-6'>Welcome to your 
                 <br/>
                 Compliance Assistant</p>
 
@@ -131,8 +131,8 @@ export const LoginForm = () : JSX.Element => {
                             <p className='capitalize font-bold text-xs'>E-mail Address</p>
                             <input type={"email"} 
                             className={emailError.isError
-                                ?"text-[#DC143C] w-full py-2.5 px-4 rounded border border-[#DC143C] text-sm my-4"
-                                :"text-black w-full py-2.5 px-4 rounded border border-[#CBCBCB] text-sm my-4" }
+                                ?"text-[#DC143C] w-full py-2.5 bg-white px-4 rounded border border-[#DC143C] text-sm my-4"
+                                :"text-black w-full py-2.5 px-4 bg-white rounded border border-[#CBCBCB] text-sm my-4" }
                             required
                             onChange={(e) => emailOnchangeHandler(e)}/>
                             {/* {emailError.isError && <span className='text-xs text-[#DC143C]'>{emailError.msg}</span>} */}
@@ -140,10 +140,10 @@ export const LoginForm = () : JSX.Element => {
 
                         <div className='flex flex-col mb-2'>
                             <p className='capitalize font-bold text-xs'>password</p>
-                            <div  className={"text-black w-full rounded border border-[#CBCBCB] text-sm my-4 flex justify-between items-center" }>
+                            <div  className={"text-black w-full bg-white rounded border border-[#CBCBCB] text-sm my-4 flex justify-between items-center" }>
 
                                 <input type={boolStates.viewPassword ? "text" :"password"} 
-                                    className="px-4 py-2.5 rounded-md w-10/12"
+                                    className="px-4 py-2.5 rounded-md w-10/12 bg-white"
                                     required
                                     onChange={(e) => setPasswordOnchangeHandler(e)}/>
 

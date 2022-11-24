@@ -161,10 +161,9 @@ export const LoginForm = () : JSX.Element => {
                         </div>
                         
                         <button type={"submit"}
-                        disabled={validateEmail(loginDetails.email) && loginDetails.password 
-                        && !emailError.isError
-                        && !loader
-                        ?false : true}
+                        disabled={
+                        //validateEmail(loginDetails.email) && loginDetails.password &&
+                        !emailError.isError && !loader ? false : true}
                         className="w-full p-3 text-white text-xs bg-[#6157A0] 
                         rounded-md my-2 cursor-pointer hover:shadow-lg 
                         flex justify-center items-center gap-4

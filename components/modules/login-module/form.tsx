@@ -128,7 +128,7 @@ export const LoginForm = () : JSX.Element => {
                 <div className='my-4'>
                     <form onSubmit={onSubmitHandler}>
                         <div className='flex flex-col mb-2'>
-                            <p className='capitalize font-bold text-xs'>E-mail Address</p>
+                            <p className='capitalize font-bold text-xs text-black'>E-mail Address</p>
                             <input type={"email"} 
                             className={emailError.isError
                                 ?"text-[#DC143C] w-full py-2.5 bg-white px-4 rounded border border-[#DC143C] text-sm my-4"
@@ -139,7 +139,7 @@ export const LoginForm = () : JSX.Element => {
                         </div>
 
                         <div className='flex flex-col mb-2'>
-                            <p className='capitalize font-bold text-xs'>password</p>
+                            <p className='capitalize font-bold text-xs text-black'>password</p>
                             <div  className={"text-black w-full bg-white rounded border border-[#CBCBCB] text-sm my-4 flex justify-between items-center" }>
 
                                 <input type={boolStates.viewPassword ? "text" :"password"} 

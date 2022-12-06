@@ -89,9 +89,10 @@ export const LoginForm = () : JSX.Element => {
                      localStorage.setItem('message', "LogIn successFul");
                     //alert(message);
                     setAxiosResponse({...axiosResponse, msg : message, isError: false});
-                    // setTimeout(() => {
-                    //     setAxiosResponse({...axiosResponse, msg : "", isError : false});
-                    // },4000);
+                    setTimeout(() => {
+                        router.push('/jobs');
+                       // setAxiosResponse({...axiosResponse, msg : "", isError : false});
+                    },3000);
                     //router.push('/view-status');
                 }
                
@@ -107,7 +108,7 @@ export const LoginForm = () : JSX.Element => {
                     },4000);
                 }
             }
-        })
+        });
     }
     React.useEffect(() =>{
         console.log('login details',loginDetails);

@@ -57,7 +57,7 @@ const MainLayout : FC<Props> = ({children}) : JSX.Element => {
                 <SideBarNavigation values={returnValues()}/>
                 <main className="flex-1 bg-white text-black">
                     <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>
-                    <div className="w-full flex justify-center lg:justify-start lg:ml-8 p-4 md:py-4 md:px-0">
+                    <div className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4 md:px-0">
                         {children}
                     </div>
                 </main>

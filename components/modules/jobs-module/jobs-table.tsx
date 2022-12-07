@@ -128,8 +128,8 @@ export default function JobsTable() {
   };
 
   return (
-    <div className="w-full flex justify-center">
-      <div className='w-11/12 md:w-full'>
+    // <div className="w-full flex justify-center">
+    //   <div className='w-11/12 md:w-full'>
         <Paper sx={{ width: '100%', overflow: 'hidden' }} elevation={0}>
           <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
@@ -172,7 +172,7 @@ export default function JobsTable() {
                                     {/* {column.format && typeof value === 'number'
                                         ? column.format(value)
                                         : value} */}
-                                        <div className={`${returnColorForJobStatus(value)} w-fit px-3 py-2 text-white text-[10px] font-semibold rounded-2xl`}>
+                                        <div key={column.id} className={`${returnColorForJobStatus(value)} w-fit px-3 py-2 text-white text-[10px] font-semibold rounded-2xl`}>
                                             {value}
                                         </div>
                                     </StyledTableCell>
@@ -208,7 +208,7 @@ export default function JobsTable() {
             onRowsPerPageChange={handleChangeRowsPerPage}
           /> */}
         </Paper>
-      </div>
-    </div>
+    //   </div>
+    // </div> 
   );
 }

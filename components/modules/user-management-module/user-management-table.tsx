@@ -125,8 +125,8 @@ export default function UserManagementTable() {
   };
 
   return (
-    <div className="w-full flex justify-center">
-        <div className='w-11/12 md:w-full'>
+    // <div className="w-full flex justify-center">
+    //     <div className='w-11/12 md:w-full'>
             <Paper sx={{ width: '100%', overflow: 'hidden' }} elevation={0}>
                 <TableContainer sx={{ maxHeight: 440 }}>
                     <Table stickyHeader aria-label="sticky table">
@@ -189,7 +189,7 @@ export default function UserManagementTable() {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 /> */}
             </Paper>
-        </div>
-    </div>
+    //     </div>
+    // </div>
   );
 }

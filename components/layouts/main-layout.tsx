@@ -11,7 +11,7 @@ import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOu
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 
 type Props = {
-    children : JSX.Element
+    children ?: JSX.Element
 };
 const UserSideNavigationValues : SidebarElementValuesObject = {
     firstName : 'Oluwadamilola',
@@ -49,19 +49,20 @@ const UserSideNavigationValues : SidebarElementValuesObject = {
 export const returnValues = () :SidebarElementValuesObject => {
     return UserSideNavigationValues;
 }
-
+//className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4 md:px-0"
 const MainLayout : FC<Props> = ({children}) : JSX.Element => {
     return(
         <Fragment>
-           <div className="flex">
+            <div className="flex w-full">
                 <SideBarNavigation values={returnValues()}/>
-                <main className="flex-1 bg-white text-black">
+                <div className="flex-1 bg-white text-black">
                     <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>
-                    <div className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4 md:px-0">
+                    <div className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4">
                         {children}
                     </div>
-                </main>
-           </div>
+                </div>
+            </div>
+            
         </Fragment>
     );
 }

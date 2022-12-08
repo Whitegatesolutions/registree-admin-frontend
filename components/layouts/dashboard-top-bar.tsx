@@ -29,8 +29,8 @@ export const DashboardTopBar :FC<Props> = ({pageTitle, showControls = true}) => 
         router.replace('/login');
     }
     return(
-        <header className="sticky top-0 z-10 bg-white w-full flex justify-center lg:justify-start lg:ml-8">
-            <div className='w-11/12'>
+        <header className="w-full sticky top-0 z-10 bg-white flex justify-center">
+            <div className='lg:w-11/12 w-full'>
                 <div className="w-full my-8 flex justify-between items-center">
                     <section className="md:flex text-xl font-bold text-black">
                         <span className='hidden lg:flex'>{pageTitle}</span>

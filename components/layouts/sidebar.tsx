@@ -15,7 +15,7 @@ export const SideBarNavigation :FC<Props> = ({values : {firstName,lastName,image
     return(
         <div>
             <div className='hidden lg:flex lg:w-72 bg-[#6157A0] h-full text-white'>
-                <div className='fixed lg:flex lg:w-64 xl:w-72 h-full bg-[#6157A0]'>
+                <div className='fixed lg:flex lg:w-72 h-full bg-[#6157A0]'>
                     <div className="w-full h-auto mt-20">
                         <div className="flex justify-center">
                             <Avatar src={'/static-img.png'} sx={{

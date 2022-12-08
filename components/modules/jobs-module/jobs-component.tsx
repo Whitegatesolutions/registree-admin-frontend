@@ -1,27 +1,37 @@
 import MainLayout from "../../layouts/main-layout";
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import JobsTable from "./jobs-table";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
+import { DashboardTopBar } from "../../layouts/dashboard-top-bar";
+import React from 'react';
 
 const JobsComponent = () :JSX.Element =>{
 
     return(
-        <MainLayout>
-            <div className="w-11/12">
-            <Container sx={{width : 1}}>
-                <div className="w-full flex justify-between my-8">
-                    <p className="text-3xl text-black font-bold">My&nbsp;Jobs</p>
-                    {/* <button className="flex justify-center items-center gap-1 text-xs font-semibold text-white py-2 px-4 rounded-md bg-[#6157A0]">
-                        <ControlPointRoundedIcon sx={{fontSize : '18px'}}/>
-                        Add&nbsp;User
-                    </button> */}
-                </div>
-                <Box sx={{ width : 1, height: 500 }}>
+        <React.Fragment>
+            <div className="lg:hidden w-full flex justify-center">
+                <div className="w-11/12 flex flex-col">
+                    <div className="w-full">
+                        <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>
+                    </div>
+                    <div className="w-full flex justify-between my-8">
+                        <p className="text-3xl text-black font-bold">My&nbsp;Jobs</p>
+                    </div>
                     <JobsTable/>
-                </Box>
-            </Container>
+                </div>
+               
             </div>
-        </MainLayout>
+            <div className="hidden lg:flex">
+                <MainLayout>
+                    <div className="w-11/12">
+                        <div className="w-full flex justify-between my-8">
+                            <p className="text-3xl text-black font-bold">My&nbsp;Jobs</p>
+                        </div>
+                        <JobsTable/>
+                    </div>
+                </MainLayout>
+            </div>  
+        </React.Fragment> 
     );
 }
 

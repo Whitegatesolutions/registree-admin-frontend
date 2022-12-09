@@ -10,7 +10,7 @@ const JobsComponent = () :JSX.Element =>{
 
     return(
         <React.Fragment>
-            <div className="lg:hidden w-full flex justify-center">
+            <div className="lg:hidden w-full flex justify-center bg-white text-black">
                 <div className="w-11/12 flex flex-col">
                     <div className="w-full">
                         <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>

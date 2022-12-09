@@ -10,14 +10,14 @@ const UserManagement = () :JSX.Element =>{
 
     return(
         <React.Fragment>
-            <div className="lg:hidden w-full flex justify-center">
+            <div className="lg:hidden w-full flex justify-center bg-white text-black">
                 <div className="w-11/12 flex flex-col">
                     <div className="w-full">
                         <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>
                     </div>
                     <div className="w-full flex flex-col gap-2 my-4">
                         <p className="text-3xl text-black font-bold">User Management</p>
-                        <button className="w-full flex justify-center items-center gap-1 text-xs font-semibold text-white py-2 px-4 rounded-md bg-[#6157A0]">
+                        <button className="w-full flex justify-center items-center gap-1 text-sm font-semibold text-white my-2 py-3 px-4 rounded-md bg-[#6157A0]">
                             <ControlPointRoundedIcon sx={{fontSize : '18px'}}/>
                             Add&nbsp;User
                         </button>

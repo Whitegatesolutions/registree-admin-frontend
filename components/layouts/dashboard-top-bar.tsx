@@ -69,7 +69,7 @@ export const ResponsiveSideBar : FC<Props1> = ({values : {firstName,lastName,ima
                             className={
                                 router.pathname.includes(data.link)?
                                 'w-full flex justify-center text-base font-semibold cursor-pointer bg-white text-[#6157A0]'
-                                :'w-full flex justify-center text-white text-base font-semibold cursor-pointer hover:bg-[#F5F5F5] hover:bg-opacity-30'
+                                :'w-full flex justify-center text-white text-sm font-semibold cursor-pointer hover:bg-[#F5F5F5] hover:bg-opacity-30'
                             }>
                                 <div className='w-3/5 flex justify-self-start'>
                                     <div className='flex flex-row items-center gap-2 py-1'>

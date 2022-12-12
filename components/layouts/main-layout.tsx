@@ -13,7 +13,7 @@ import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 type Props = {
     children ?: JSX.Element
 };
-const UserSideNavigationValues : SidebarElementValuesObject = {
+export const UserSideNavigationValues : SidebarElementValuesObject = {
     firstName : 'Oluwadamilola',
     lastName : 'Adeyemi',
     image : '/static-img.png',

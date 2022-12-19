@@ -14,6 +14,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ComponentLoader } from '../loader-spinner';
 import DeleteUserDialog from './delete-user-dialog';
 import { AddUserDialog } from './add-user-dialog';
+import { CustomDivBackDrop } from '../../backdrop';
 
 const columns = [
   { id: 'serial', label: 'S/N', width : 'fit-content'},
@@ -65,18 +66,21 @@ const Action = ( {id, refetch} : any) :JSX.Element =>{
       <React.Fragment>
         <div className='flex flex-row items-center gap-1'>
           <IconButton sx={{padding : '0.4rem'}}>
-              <object data="/icons.png" className='w-4 h-4 object-contain'/>
+            <object data="/icons.png" className='w-4 h-4 object-contain'/>
           </IconButton>
 
           <IconButton sx={{padding : '0.4rem'}} onClick={() => setDialog({...openDialog, delete : !openDialog.delete})}>
-              <object data="/delete.png" className='w-4 h-4 object-contain'/>
+            <object data="/delete.png" className='w-4 h-4 object-contain'/>
           </IconButton>
         </div>
+
         {openDialog.delete && <DeleteUserDialog 
-        open={openDialog.delete} 
-        handleClose={() => setDialog({...openDialog, delete : !openDialog.delete})}
+        open={openDialog.delete}
         id={id}
+        handleClose={() => setDialog({...openDialog, delete : !openDialog.delete})}
         refetch={refetch}/>}
+        {openDialog.delete && <CustomDivBackDrop 
+        close={() => setDialog({...openDialog, delete : !openDialog.delete})}/>}
       </React.Fragment>
     );
 } 
@@ -255,9 +259,11 @@ export default function UserManagementTable({open, close} : Props) {
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}/>}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />}
 
-    {open && <AddUserDialog open={open} close={close} refetch={refetch}/>}
+      {open && <AddUserDialog open={open} handleClose={close} refetch={refetch}/>}
+      {open && <CustomDivBackDrop close={close}/>}
     </Paper>
   );
 }

@@ -49,42 +49,30 @@ export default function DeleteUserDialog( {open, handleClose, id, refetch} : Pro
         });
     }   
   return (
-    <React.Fragment>
-    {
-        open && 
-        <div id="backDropLoader" className="z-20" onClick={handleClose}>
-            {/* {disabled.severity === "success" ?
-             <Alert severity={"success"}>{disabled.message}</Alert>
-             :<Alert severity={"error"}>{disabled.message}</Alert>
-            } */}
-            <div className="w-fit bg-white modal px-6 py-4">
-                <p className='text-black font-bold py-2'>Are you Sure you want to delete this user?</p>
+        <div className="w-fit bg-white modal px-6 py-4">
+            <p className='text-black font-bold py-2'>Are you Sure you want to delete this user?</p>
 
-                <div className='flex justify-end gap-4 mt-6'>
-                    <button 
-                    onClick={handleClose}
-                    disabled={disabled.disable ? true : false}
-                    className='text-md font-bold p-2 rounded-md capitalize bg-[#6157A0] text-[#fff]
-                    disabled:bg-[#EFF0F6] 
-                    disabled:shadow-none 
-                    disabled:text-gray-500 disabled:cursor-default'>
-                        cancel
-                    </button>
-                    <button 
-                    onClick={handleDeleteUser}
-                    disabled={disabled.disable ? true : false}
-                    className='text-md font-bold p-2 rounded-md capitalize
-                    bg-[#6157A0] text-[#fff]
-                    disabled:bg-[#EFF0F6] 
-                    disabled:shadow-none 
-                    disabled:text-gray-500 disabled:cursor-default'>
-                        ok
-                    </button>
-                </div>
-            </div>
-        
+        <div className='flex justify-end gap-4 mt-6'>
+            <button 
+            onClick={handleClose}
+            disabled={disabled.disable ? true : false}
+            className='text-md font-bold p-2 rounded-md capitalize bg-[#6157A0] text-[#fff]
+            disabled:bg-[#EFF0F6] 
+            disabled:shadow-none 
+            disabled:text-gray-500 disabled:cursor-wait'>
+                cancel
+            </button>
+            <button 
+            onClick={handleDeleteUser}
+            disabled={disabled.disable ? true : false}
+            className='text-md font-bold p-2 rounded-md capitalize
+            bg-[#6157A0] text-[#fff]
+            disabled:bg-[#EFF0F6] 
+            disabled:shadow-none 
+            disabled:text-gray-500 disabled:cursor-wait'>
+                ok
+            </button>
         </div>
-    }
-    </React.Fragment>
+    </div>
   );
 }

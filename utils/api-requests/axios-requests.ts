@@ -27,6 +27,18 @@ export const getAxiosRequest = async (uri : string) => {
     });
 }
 
+export const postAxiosRequestWithAuthorizationHeader = async (value : AxiosRequestInterface) => {
+    const {uri, body} = value;
+    //console.log(body);
+    return await axios.post(Constants.HOST_ADDRESS.concat(uri), body, {
+        headers : {
+            'Content-Type' : 'application/json',
+            Authorization : 'Bearer '.concat(getToken(window.localStorage.getItem('token')))
+        }
+    });
+}
+
+
 export const getAxiosRequestWithAuthorizationHeader = async (uri : string) => {
     return await axios.get(Constants.HOST_ADDRESS.concat(uri), {
         headers : {

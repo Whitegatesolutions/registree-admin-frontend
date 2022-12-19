@@ -30,6 +30,10 @@ select{
 input[type="email"]{
   outline: none !important;
 }
+input[type="file"]{
+  outline: none !important;
+}
+
 input[type="search"]{
   outline: none !important;
 }
@@ -130,4 +134,16 @@ input[type="password"]{
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+::-webkit-file-upload-button{
+  outline: none;
+  float: right;
+  border: none;
+  padding: 8px;
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  color: #838787;
+  cursor: pointer;
+  /* display: none; */
 }

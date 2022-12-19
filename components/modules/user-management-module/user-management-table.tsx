@@ -15,6 +15,7 @@ import { ComponentLoader } from '../loader-spinner';
 import DeleteUserDialog from './delete-user-dialog';
 import { AddUserDialog } from './add-user-dialog';
 import { CustomDivBackDrop } from '../../backdrop';
+import { EditUserDialog } from './edit-user-dialog';
 
 const columns = [
   { id: 'serial', label: 'S/N', width : 'fit-content'},
@@ -56,7 +57,7 @@ const columns = [
   }
 ];
 
-const Action = ( {id, refetch} : any) :JSX.Element =>{
+const Action = ( {id, refetch, user} : any) :JSX.Element =>{
   const [openDialog, setDialog] = React.useState({
     edit : false,
     delete : false
@@ -65,7 +66,8 @@ const Action = ( {id, refetch} : any) :JSX.Element =>{
     return(
       <React.Fragment>
         <div className='flex flex-row items-center gap-1'>
-          <IconButton sx={{padding : '0.4rem'}}>
+          <IconButton sx={{padding : '0.4rem'}}
+          onClick={() => setDialog({...openDialog, edit : !openDialog.edit})}>
             <object data="/icons.png" className='w-4 h-4 object-contain'/>
           </IconButton>
 
@@ -81,6 +83,13 @@ const Action = ( {id, refetch} : any) :JSX.Element =>{
         refetch={refetch}/>}
         {openDialog.delete && <CustomDivBackDrop 
         close={() => setDialog({...openDialog, delete : !openDialog.delete})}/>}
+
+      {openDialog.edit && <EditUserDialog 
+        handleClose={() => setDialog({...openDialog, edit : !openDialog.edit})}
+        refetch={refetch}
+        user={user}/>}
+        {openDialog.edit && <CustomDivBackDrop 
+        close={() => setDialog({...openDialog, edit : !openDialog.edit})}/>}
       </React.Fragment>
     );
 } 
@@ -141,7 +150,7 @@ export default function UserManagementTable({open, close} : Props) {
       <Paper sx={{ width: '100%', overflow: 'hidden' }} elevation={0}>
         <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
-            <TableHead>
+              <TableHead>
                 <TableRow>
                 {columns.map((column :any) => (
                     <TableCell
@@ -228,7 +237,7 @@ export default function UserManagementTable({open, close} : Props) {
                                   paddingBottom : '10px', 
                                   border : 'none',
                                   textTransform : 'capitalize'}}>
-                                    <Action id={row.id} refetch={refetch}/>
+                                    <Action id={row.id} refetch={refetch} user={row}/>
                                   </StyledTableCell>
                                 );
                               }
@@ -249,7 +258,7 @@ export default function UserManagementTable({open, close} : Props) {
                         </>              
                     );
                 })}
-            </TableBody>
+              </TableBody>
             </Table> 
         </TableContainer>
         {data?.data?.data.length >= 5 && <TablePagination

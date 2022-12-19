@@ -29,7 +29,6 @@ export const getAxiosRequest = async (uri : string) => {
 
 export const postAxiosRequestWithAuthorizationHeader = async (value : AxiosRequestInterface) => {
     const {uri, body} = value;
-    //console.log(body);
     return await axios.post(Constants.HOST_ADDRESS.concat(uri), body, {
         headers : {
             'Content-Type' : 'application/json',
@@ -38,6 +37,15 @@ export const postAxiosRequestWithAuthorizationHeader = async (value : AxiosReque
     });
 }
 
+export const patchAxiosRequestWithAuthorizationHeader = async (value : AxiosRequestInterface) => {
+    const {uri, body} = value;
+    return await axios.patch(Constants.HOST_ADDRESS.concat(uri), body, {
+        headers : {
+            'Content-Type' : 'application/json',
+            Authorization : 'Bearer '.concat(getToken(window.localStorage.getItem('token')))
+        }
+    });
+}
 
 export const getAxiosRequestWithAuthorizationHeader = async (uri : string) => {
     return await axios.get(Constants.HOST_ADDRESS.concat(uri), {
@@ -59,4 +67,16 @@ export const deleteAxiosRequestWithAuthorizationHeader = async (uri : string) =>
 export const swrFetcher = async (uri: string) => {
 	const response = await getAxiosRequestWithAuthorizationHeader(uri);
 	return response.data;
+};
+
+export const multipleFilePostRequest = async (
+	path: string,
+	files: FormData
+) => {
+	return await axios.post(Constants.HOST_ADDRESS.concat(path), files, {
+		//upload-files
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 };

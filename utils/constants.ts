@@ -61,3 +61,16 @@ export interface JobsInterface{
     status : string;
     userId : string;
 }
+
+export interface EditUserDialogInterface {
+    id ?: string;
+    firstName ?: string;
+    lastName ?: string;
+    email ?: string,
+    phoneNumber?: string,
+    password ?: string,
+    role ?: string,
+    userId: string,
+    profileImageUrl ?: string,
+    status ?: boolean
+}

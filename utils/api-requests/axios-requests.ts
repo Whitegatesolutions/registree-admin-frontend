@@ -35,3 +35,16 @@ export const getAxiosRequestWithAuthorizationHeader = async (uri : string) => {
         }
     });
 }
+
+export const deleteAxiosRequestWithAuthorizationHeader = async (uri : string) => {
+    return await axios.delete(Constants.HOST_ADDRESS.concat(uri), {
+        headers : {
+            'Content-Type' : 'application/json',
+            Authorization : 'Bearer '.concat(getToken(window.localStorage.getItem('token')))
+        }
+    });
+}
+export const swrFetcher = async (uri: string) => {
+	const response = await getAxiosRequestWithAuthorizationHeader(uri);
+	return response.data;
+};

@@ -9,6 +9,8 @@ import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlin
 import ViewCompactOutlinedIcon from '@mui/icons-material/ViewCompactOutlined';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
+import { getAxiosRequestWithAuthorizationHeader } from "../../utils/api-requests/axios-requests";
+import { useQuery } from "@tanstack/react-query";
 
 type Props = {
     children ?: JSX.Element
@@ -51,12 +53,14 @@ export const returnValues = () :SidebarElementValuesObject => {
 }
 //className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4 md:px-0"
 const MainLayout : FC<Props> = ({children}) : JSX.Element => {
+    const {data, error} = useQuery(['top-bar-name'], 
+    () => getAxiosRequestWithAuthorizationHeader('user/profile/find-user-by-token'));  
     return(
         <Fragment>
             <div className="flex w-full">
                 <SideBarNavigation values={returnValues()}/>
                 <div className="flex-1 bg-white text-black">
-                    <DashboardTopBar pageTitle="Hi Oluwadamilola" showControls={true}/>
+                    <DashboardTopBar pageTitle={data?.data?.data.firstName} showControls={true}/>
                     <div className="w-full flex justify-center lg:justify-start lg:ml-8 md:py-4">
                         {children}
                     </div>

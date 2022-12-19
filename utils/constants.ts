@@ -1,6 +1,7 @@
 export enum Constants {
     COVER_PHOTO = "https://images.pexels.com/photos/955393/pexels-photo-955393.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    HOST_ADDRESS = "https://registreee.herokuapp.com/" ,
+    HOST_ADDRESS = "http://localhost:8080/" ,
+    TEMPORARY_HOST_ADDRESS = "https://registreee.herokuapp.com/",
     PASSWORD_REQUIREMENT = "Password length must be at least 8 characters, must contain upper and lowercase alphabets,special character and number"
 }
 
@@ -29,4 +30,34 @@ export interface ErrorInterfaceObj{
 export interface AxiosRequestInterface{
     uri : string;
     body ?: any;
+}
+
+interface BusinessNameRegObjInterface{
+    businessAddress : string;
+    dateCreated : string;
+    dateUpdated : string;
+    email : string;
+    firstNameSuggestion : string;
+    id : string;
+    phoneNumber : string;
+    processStatus : string;
+    registeredPartnersForThsBusiness : any[];
+    secondNameSuggestion : string;
+    status : string;
+    userId : string;
+}
+
+export interface JobsInterface{
+    businessNameRegistration : BusinessNameRegObjInterface;
+    businessNameRegistrationId : string;
+    dateCreated : string;
+    dateUpdated : string;
+    documentsUnderThisJob : any[]
+    id : string;
+    jobTagId : string;
+    jobType : string;
+    paymentStatus : string;
+    processStatus : string;
+    status : string;
+    userId : string;
 }

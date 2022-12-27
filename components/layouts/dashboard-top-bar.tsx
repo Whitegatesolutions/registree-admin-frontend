@@ -64,8 +64,8 @@ export const ResponsiveSideBar : FC<Props1> = ({values : {body}}) :JSX.Element =
                                     border : '1px solid #CBCBCB'
                                 }}/>
                                 <div className='text-center my-4 text-lg font-semibold'>
-                                    <p className='capitalize'>{data?.data?.data.firstName}</p>
                                     <p className='capitalize'>{data?.data?.data.lastName}</p>
+                                    <p className='capitalize'>{data?.data?.data.firstName}</p>
                                 </div>
                            </div>
                         </div>

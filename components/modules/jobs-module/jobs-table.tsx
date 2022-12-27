@@ -155,6 +155,7 @@ export default function JobsTable() {
   const {data, isLoading, isError} = useQuery(['jobs'], 
   () => getAxiosRequestWithAuthorizationHeader('job/find/find-open-jobs'));
 
+  console.log(data?.data?.data);
   if(isError){
     return <p className='text-red-500'>An error has occurred!</p>
   }
@@ -193,9 +194,9 @@ export default function JobsTable() {
                         <StyledTableRow role="checkbox" tabIndex={-1} key={row.code}>
                             {columns.map((column : any) => {
                             const value = row[column.id];
-                            
-                            if(column.id === "regDate"){
-                              return(
+      
+                           if(column.id === "regDate"){
+                             return(
                                 <StyledTableCell key={column.id} align={column.align}
                                 sx={{paddingTop :'10px',
                                 paddingBottom : '10px', 
@@ -203,7 +204,7 @@ export default function JobsTable() {
                                 textTransform : 'capitalize'}}>
                                 {column.format && typeof value === 'number'
                                     ? column.format(value)
-                                    : new Date(value.dateCreated).toDateString()}
+                                    : new Date(row.dateCreated).toDateString()}
                                 </StyledTableCell>
                               );
                             }
@@ -214,9 +215,10 @@ export default function JobsTable() {
                                 paddingBottom : '10px', 
                                 border : 'none',
                                 textTransform : 'capitalize'}}>
-                                {column.format && typeof value === 'number'
+                                {/* {column.format && typeof value === 'number'
                                     ? column.format(value)
-                                    : value?.user.firstName.concat(` ${value?.user.lastName}`)}
+                                    : row?.user.firstName.concat(` ${row?.user.lastName}`)} */}
+                                    <p>Business Owner</p>
                                 </StyledTableCell>
                               );
                             }
@@ -228,8 +230,8 @@ export default function JobsTable() {
                                 paddingBottom : '10px', 
                                 border : 'none',
                                 textTransform : 'capitalize'}}>
-                                  <p>{value?.businessNameRegistration.firstNameSuggestion}</p>
-                                  <p>{value?.businessNameRegistration.secondNameSuggestion}</p>
+                                  <p>{row?.businessNameRegistration?.firstNameSuggestion}</p>
+                                  <p>{row?.businessNameRegistration?.secondNameSuggestion}</p>
                                 </StyledTableCell>
                               );
                             }
@@ -240,8 +242,8 @@ export default function JobsTable() {
                                 paddingBottom : '10px', 
                                 border : 'none',
                                 textTransform : 'capitalize'}}>
-                                    <div key={column.id} className={`${returnColorForJobStatus(value.processStatus)} w-fit px-3 py-2 text-white text-[10px] font-semibold rounded-2xl`}>
-                                        {value.processStatus}
+                                    <div key={column.id} className={`${returnColorForJobStatus(row.processStatus)} w-fit px-3 py-2 text-white text-[10px] font-semibold rounded-2xl`}>
+                                        {row.processStatus}
                                     </div>
                                 </StyledTableCell>
                               );
@@ -277,15 +279,14 @@ export default function JobsTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      {data && data?data?.data.length >= 5 && <TablePagination
+      {data && data?.data?.data.length >= 5 && <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
         count={data && data?.data?.data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}/> 
-        : null}
+        onRowsPerPageChange={handleChangeRowsPerPage}/> }
     </Paper> 
   );
 }

@@ -105,7 +105,7 @@ export const AddUserDialog:React.FC<Props> = ({open, handleClose ,refetch})  : J
                         <p className='font-bold'>First&nbsp;Name</p>
                         <input 
                         type="text" 
-                        className='py-2.5 text-sm px-4 rounded-md border border-[#CBCBCB]'
+                        className='py-2.5 text-sm px-4 bg-white text-black rounded-md border border-[#CBCBCB]'
                         onChange={(e) => firstNameChangeHandler(e)}
                         />
                     </div>
@@ -114,12 +114,12 @@ export const AddUserDialog:React.FC<Props> = ({open, handleClose ,refetch})  : J
                         <p className='font-bold'>Last&nbsp;Name</p>
                         <input 
                         type="text" 
-                        className='py-2.5 text-sm px-4 rounded-md border border-[#CBCBCB]'
+                        className='py-2.5 text-sm px-4 bg-white text-black rounded-md border border-[#CBCBCB]'
                         onChange={(e) => lastNameChangeHandler(e)}/>
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>Gender</p>
                         <select 
                         name="gender" 
@@ -129,7 +129,7 @@ export const AddUserDialog:React.FC<Props> = ({open, handleClose ,refetch})  : J
                             <option value="FEMALE">Female</option>
                         </select>
                     </div>
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>Role</p>
                         <select 
                         name="role" 
@@ -146,11 +146,11 @@ export const AddUserDialog:React.FC<Props> = ({open, handleClose ,refetch})  : J
                         <p className='font-bold'>E-mail</p>
                         <input 
                         type="email" 
-                        className='py-2.5 text-sm px-4 rounded-md border border-[#CBCBCB]'
+                        className='py-2.5 text-sm px-4 bg-white text-black rounded-md border border-[#CBCBCB]'
                         onChange={(e) => emailChangeHandler(e)}/>
                     </div>
 
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>Status</p>
                         <select 
                         name="status" 

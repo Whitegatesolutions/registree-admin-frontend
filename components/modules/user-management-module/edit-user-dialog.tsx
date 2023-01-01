@@ -176,7 +176,7 @@ export const EditUserDialog:React.FC<Props> = ({
         <div className="w-11/12 md:w-4/5 lg:w-1/2 max-h-[37rem] overflow-y-auto bg-white modal p-8">
             <form onSubmit={OnsubmitHandler}>
 
-                <div className="flex flex-col sm:flex-row gap-4 items-center mb-4">
+                <div className="flex flex-col sm:flex-row gap-4 items-center mb-4 bg-white text-black">
                     <div className="flex flex-col w-full sm:w-1/2 gap-1">
                         <p className='font-bold'>First&nbsp;Name</p>
                         <input 
@@ -187,7 +187,7 @@ export const EditUserDialog:React.FC<Props> = ({
                         />
                     </div>
 
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full bg-white text-black sm:w-1/2 gap-1">
                         <p className='font-bold'>Last&nbsp;Name</p>
                         <input 
                         type="text" 
@@ -197,7 +197,7 @@ export const EditUserDialog:React.FC<Props> = ({
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='capitalize font-bold text-xs text-black'>Password</p>
                         <div  className={"text-black w-full bg-white rounded-md border border-[#CBCBCB] text-sm flex justify-between items-center" }>
 
@@ -216,7 +216,7 @@ export const EditUserDialog:React.FC<Props> = ({
                             
                         </div>
                     </div>
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>Role</p>
                         <select 
                         name="role" 
@@ -230,7 +230,7 @@ export const EditUserDialog:React.FC<Props> = ({
 
                 <div className="w-full flex flex-col sm:flex-row gap-4 items-center mb-4">
 
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>E-mail</p>
                         <input 
                         type="email" 
@@ -239,7 +239,7 @@ export const EditUserDialog:React.FC<Props> = ({
                         defaultValue={userWithPrivilege.email}/>
                     </div>
 
-                    <div className="flex flex-col w-full sm:w-1/2 gap-1">
+                    <div className="flex flex-col w-full sm:w-1/2 gap-1 bg-white text-black">
                         <p className='font-bold'>Status</p>
                         <select 
                         name="status" 

@@ -11,6 +11,7 @@ import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOu
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 import { getAxiosRequestWithAuthorizationHeader } from "../../utils/api-requests/axios-requests";
 import { useQuery } from "@tanstack/react-query";
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
 type Props = {
     children ?: JSX.Element
@@ -20,6 +21,12 @@ export const UserSideNavigationValues : SidebarElementValuesObject = {
     lastName : 'Adeyemi',
     image : '/static-img.png',
     body : [
+        {
+            
+            icon : <WorkHistoryIcon sx={{fontSize : '18px'}}/>,
+            link : '/jobs',
+            title : 'Jobs'
+        },
         {
             
             icon : <CurrencyExchangeOutlinedIcon sx={{fontSize : '18px'}}/>,

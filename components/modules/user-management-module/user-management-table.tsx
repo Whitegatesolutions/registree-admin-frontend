@@ -171,7 +171,7 @@ export default function UserManagementTable({open, close} : Props) {
                 </TableRow>
             </TableHead>
             <TableBody>
-            {isLoading && <ComponentLoader/>}
+            {/* {isLoading && <ComponentLoader/>} */}
                 {data?.data?.data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row :any, rowindex : number) => {

@@ -185,7 +185,7 @@ export default function JobsTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-          {isLoading && <ComponentLoader/>}
+          {/* {isLoading && <ComponentLoader/>} */}
             {data && data?.data?.data
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row :any, i : number) => {
